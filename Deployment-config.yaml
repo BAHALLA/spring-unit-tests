@@ -1,0 +1,28 @@
+kubernetes_unit_namespace: "default"
+kubernetes_unit_deployment: "node-app"
+kubernetes_unit_app: "node-app"
+kubernetes_unit_service: "node-app"
+
+kubernetes_unit_replicas: 2
+kubernetes_unit_revision_history: 1
+
+#app_image_pull_secrets_name: "dakibot-harbor-registry"
+app_restart_policy: "Always"
+
+container_name: "unit-container"
+container_image: "bahalla/spring-unit-test:latest"
+container_image_pull_policy: "Always"
+container_env_exposed_port_name: "PORT"
+container_env_exposed_port_value: "8888"
+container_port_name: "container-port"
+container_port: 8888
+container_liveness_probe_initial_delay_seconds: 60
+container_liveness_probe_period_seconds: 10
+
+service_type : "NodePort"
+service_port_protocol: "TCP"
+service_port : 8888
+service_node_port: 30001
+
+node_port_number: "{{ service_node_port }}"
+node_id: "2"
