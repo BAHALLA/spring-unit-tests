@@ -29,6 +29,6 @@ class EmployeeRepositoryTest {
 
         Employee founded = employeeRepository.findByName(employee.getName());
 
-        assertThat(founded.getName()).isEqualTo("hello");
+        assertThat(founded.getName()).isEqualTo("Taoufiq");
     }
 }
