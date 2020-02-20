@@ -36,7 +36,7 @@ class EmployeeRestControllerTest {
 
         BDDMockito.given(employeeService.findAllEmployees()).willReturn(allEmployees);
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/api/employees")
+        mockMvc.perform(MockMvcRequestBuilders.get("/employees")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$", IsCollectionWithSize.hasSize(1)))
